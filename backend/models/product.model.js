@@ -11,6 +11,14 @@ const productSchema = new mongoose.Schema(
       type: String,
       trim: true,
     },
+    availibity:{
+      type: Boolean,
+      required: true,
+    },
+    featuredItem:{
+      type: Boolean,
+      default: false,
+    },
     price: {
       type: Number,
       required: [true, "Price is required"],

@@ -8,6 +8,13 @@ export const getAllProducts = async (): Promise<ProductListResponse> => {
   return response.data;
 };
 
+export const getFeaturedProducts = async (): Promise<ProductListResponse> => {
+  const response = await axios.get(`${API_BASE_URL}/products`, {
+    params: { featured: true },
+  });
+  return response.data;
+};
+
 export const getCategoryProducts = async (
   category?: string,
   subcategory?: string

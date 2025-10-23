@@ -2,6 +2,8 @@ export interface Product {
   _id: string;
   name: string;
   description: string;
+  availibity: boolean;
+  featuredItem: boolean;
   price: number;
   category: "stationery" | "gift" | "other";
   subcategory: string;

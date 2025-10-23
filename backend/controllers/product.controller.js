@@ -3,11 +3,12 @@ import Product from "../models/product.model.js";
 // ALL PRODUCTS
 export const getProducts = async (req, res) => {
   try {
-    const { category, subcategory } = req.query;
+    const { category, subcategory, featured } = req.query;
     const filter = {};
 
     if (category) filter.category = category;
     if (subcategory) filter.subcategory = subcategory;
+    if (featured) filter.featuredItem = featured === "true";
 
     const products = await Product.find(filter);
     res.status(200).json({message:"Product fetched successfully", data:products});
@@ -21,7 +22,7 @@ export const getProducts = async (req, res) => {
 // CREATE PRODUCT
 export const createProduct = async (req, res) => {
   try {
-    const { name, price, category, description, image, subcategory } = req.body;
+    const { name, price, category,availibity,featuredItem, description, image, subcategory } = req.body;
     if (!name || !price || !category) {
       return res
         .status(400)
@@ -31,6 +32,8 @@ export const createProduct = async (req, res) => {
     const newProduct = new Product({
       name,
       price,
+      availibity,
+      featuredItem,
       category,
       description,
       image,

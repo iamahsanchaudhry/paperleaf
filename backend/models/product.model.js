@@ -19,12 +19,12 @@ const productSchema = new mongoose.Schema(
     category: {
       type: String,
       required: [true, "Category is required"],
-      enum: ["stationery", "gift", "other"],
-      default: "stationery",
+      enum: ["stationary", "gift", "other"],
+      default: "stationary",
     },
     subcategory: {
       type: String,
-      trim: true,
+      trim: true, 
       default: "others",
     },
     image: {

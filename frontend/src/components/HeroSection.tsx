@@ -18,11 +18,11 @@ export default function Hero() {
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-tight">
             Discover Quality{" "}
             <span className="text-emerald-700 dark:text-emerald-400">
-              Stationery
+              Stationery, Gifts
             </span>{" "}
             &{" "}
             <span className="text-emerald-700 dark:text-emerald-400">
-              Gifts
+              Decor
             </span>
           </h1>
 

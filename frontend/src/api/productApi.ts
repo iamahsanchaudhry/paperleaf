@@ -40,3 +40,10 @@ export const getProductById = async (id: string): Promise<ProductSingleResponse>
   const response = await axios.get(`${API_BASE_URL}/products/${id}`);
   return response.data;
 };
+
+export const getSearchProducts = async (query: string): Promise<ProductListResponse> => {
+  const response = await axios.get(`${API_BASE_URL}/products`, {
+    params: { search: query },
+  });
+  return response.data;
+};

@@ -1,15 +1,17 @@
 import Product from "../models/product.model.js";
 
-// ALL PRODUCTS
+// ALL PRODUCTS, GET PRODUCTS BY CATEGORY, BY SEARCHED, FEATURED PRODUCTS
 export const getProducts = async (req, res) => {
   try {
-    const { category, subcategory, featured } = req.query;
+    const {category, subcategory, featured, search} = req.query;
     const filter = {};
 
     if (category) filter.category = category;
     if (subcategory) filter.subcategory = subcategory;
     if (featured) filter.featuredItem = featured === "true";
-
+    if (search) {
+      filter.name = { $regex: search, $options: "i" }; // case-insensitive
+    }
     const products = await Product.find(filter);
     res.status(200).json({message:"Product fetched successfully", data:products});
   } catch (error) {

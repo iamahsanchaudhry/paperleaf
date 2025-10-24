@@ -142,8 +142,8 @@ export default function Navbar(): JSX.Element {
             </details>
 
             <LinkItem
-              to="/gifts"
-              label="Gifts"
+              to="/gift"
+              label="Gift"
               currentPath={location.pathname}
             />
             <LinkItem
@@ -218,10 +218,9 @@ const NavLinks: React.FC<NavLinksProps> = ({
       </DropdownMenuContent>
     </DropdownMenu>
 
-    <LinkItem to="/gifts" label="Gifts" currentPath={locationPath} />
+    <LinkItem to="/gift" label="Gift" currentPath={locationPath} />
     <LinkItem to="/decor" label="Decor" currentPath={locationPath} />
     <LinkItem to="/about" label="About Us" currentPath={locationPath} />
-    <LinkItem to="/contact" label="Contact Us" currentPath={locationPath} />
   </>
 );
 

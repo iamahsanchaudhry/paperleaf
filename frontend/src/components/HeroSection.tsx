@@ -32,7 +32,7 @@ export default function Hero() {
             ideas.
           </p>
 
-          <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="mt-6 flex flex-col sm:flex-row items-center justify-start gap-4">
             <Button
               size="lg"
               className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white"

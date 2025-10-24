@@ -10,92 +10,8 @@ import {
 import { useEffect, useState } from "react";
 import type { Product } from "@/types/product.types";
 import { getFeaturedProducts } from "@/api/productApi";
-import { toast } from "sonner";
+//import { toast } from "sonner";
 import Loader from "./Loader";
-
-const items = [
-  {
-    id: 0,
-    title: "Notebooks & Journals",
-    description:
-      "Premium notebooks and journals designed to capture your ideas, thoughts, and creativity.",
-    image:
-      "https://www.littlegreengifts.com/cdn/shop/files/Mixed_Christmas_Flatlay_17232140-8d83-4aa5-afde-dc0822d12d6a.jpg?v=1758184508&width=1500",
-    link: "/stationary/products/",
-  },
-  {
-    id: 1,
-    title: "Pens & Pencils",
-    description:
-      "Smooth-writing pens and pencils for daily use, sketching, and professional work.",
-    image:
-      "https://www.littlegreengifts.com/cdn/shop/files/Mixed_Christmas_Flatlay_17232140-8d83-4aa5-afde-dc0822d12d6a.jpg?v=1758184508&width=1500",
-    link: "/stationary/products/",
-  },
-  {
-    id: 2,
-    title: "Markers & Highlighters",
-    description:
-      "Add color and emphasis to your notes with vibrant markers and highlighters.",
-    image:
-      "https://www.littlegreengifts.com/cdn/shop/files/Mixed_Christmas_Flatlay_17232140-8d83-4aa5-afde-dc0822d12d6a.jpg?v=1758184508&width=1500",
-    link: "/stationary/products/",
-  },
-  {
-    id: 3,
-    title: "Art Supplies",
-    description:
-      "Paints, brushes, and sketch materials to help artists of all levels create their best work.",
-    image:
-      "https://www.littlegreengifts.com/cdn/shop/files/Mixed_Christmas_Flatlay_17232140-8d83-4aa5-afde-dc0822d12d6a.jpg?v=1758184508&width=1500",
-    link: "/stationary/products/",
-  },
-  {
-    id: 4,
-    title: "Office Supplies",
-    description:
-      "Organize your workspace with stylish and functional office accessories.",
-    image:
-      "https://www.littlegreengifts.com/cdn/shop/files/Mixed_Christmas_Flatlay_17232140-8d83-4aa5-afde-dc0822d12d6a.jpg?v=1758184508&width=1500",
-    link: "/stationary/products/",
-  },
-  {
-    id: 5,
-    title: "Planners & Diaries",
-    description:
-      "Plan your days effectively with elegant planners and diaries that keep you on track.",
-    image:
-      "https://www.littlegreengifts.com/cdn/shop/files/Mixed_Christmas_Flatlay_17232140-8d83-4aa5-afde-dc0822d12d6a.jpg?v=1758184508&width=1500",
-    link: "/stationary/products/",
-  },
-  {
-    id: 6,
-    title: "Other Stationery",
-    description:
-      "Explore a variety of unique stationery items to complement your collection.",
-    image:
-      "https://www.littlegreengifts.com/cdn/shop/files/Mixed_Christmas_Flatlay_17232140-8d83-4aa5-afde-dc0822d12d6a.jpg?v=1758184508&width=1500",
-    link: "/stationary/products/",
-  },
-  {
-    id: 7,
-    title: "Gift Collections",
-    description:
-      "Thoughtful, beautifully packaged gifts for friends, family, and special occasions.",
-    image:
-      "https://www.littlegreengifts.com/cdn/shop/files/Mixed_Christmas_Flatlay_17232140-8d83-4aa5-afde-dc0822d12d6a.jpg?v=1758184508&width=1500",
-    link: "/gifts/",
-  },
-  {
-    id: 8,
-    title: "Home & Decor",
-    description:
-      "Elegant decor items that bring warmth, creativity, and charm to any space.",
-    image:
-      "https://www.littlegreengifts.com/cdn/shop/files/Mixed_Christmas_Flatlay_17232140-8d83-4aa5-afde-dc0822d12d6a.jpg?v=1758184508&width=1500",
-    link: "/decor/",
-  },
-];
 
 export default function FeaturedItemsSection() {
   const [featuredItems, setFearuredItems] = useState<Product[]>([]);
@@ -105,14 +21,14 @@ export default function FeaturedItemsSection() {
       try {
         const res = await getFeaturedProducts();
         setFearuredItems(res.data);
-        toast.success("Product Fetch Succesfully!", {
-          description: res.message,
-        });
+        // toast.success("Product Fetch Succesfully!", {
+        //   description: res.message,
+        // });
       } catch (error) {
         console.error("Error fetching product:", error);
-        toast.error("Failed!", {
-          description: "Failed to Fetch Product. Try again later!",
-        });
+        // toast.error("Failed!", {
+        //   description: "Failed to Fetch Product. Try again later!",
+        // });
       } finally {
         setLoading(false);
       }
@@ -172,7 +88,7 @@ export default function FeaturedItemsSection() {
 
               {/* ✅ Make arrows visible & mobile-friendly */}
               <CarouselPrevious
-                className="absolute top-1/2 -translate-y-1/2 left-2 sm:left-4 bg-white/80 dark:bg-gray-800/80 hover:bg-white dark:hover:bg-gray-700   shadow-md rounded-full p-1 sm:p-2"/>
+                className="absolute top-1/2 -translate-y-1/2 left-2 sm:left-4 bg-white/80 dark:bg-gray-800/80 hover:bg-white dark:hover:bg-gray-700 shadow-md rounded-full p-1 sm:p-2"/>
               <CarouselNext
                 className="absolute top-1/2 -translate-y-1/2 right-2 sm:right-4 bg-white/80 dark:bg-gray-800/80 hover:bg-white dark:hover:bg-gray-700 shadow-md rounded-full p-1 sm:p-2"/>
             </Carousel>

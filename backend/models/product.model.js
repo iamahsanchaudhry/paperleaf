@@ -27,7 +27,7 @@ const productSchema = new mongoose.Schema(
     category: {
       type: String,
       required: [true, "Category is required"],
-      enum: ["stationary", "gift", "other"],
+      enum: ["stationary", "gift","decor", "other"],
       default: "stationary",
     },
     subcategory: {

@@ -56,7 +56,7 @@ const Categories = [
     title: "Gift Collections",
     description: "Thoughtful, beautifully packaged gifts for friends, family, and special occasions.",
     image: "https://www.littlegreengifts.com/cdn/shop/files/Mixed_Christmas_Flatlay_17232140-8d83-4aa5-afde-dc0822d12d6a.jpg?v=1758184508&width=1500",
-    link: "/gifts",
+    link: "/gift",
   },
   {
     id: 8,

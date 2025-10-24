@@ -15,12 +15,22 @@ export const getFeaturedProducts = async (): Promise<ProductListResponse> => {
   return response.data;
 };
 
-export const getCategoryProducts = async (
+export const getSubCategoryProducts = async (
   category?: string,
   subcategory?: string
 ): Promise<ProductListResponse> => {
   const response = await axios.get(`${API_BASE_URL}/products`, {
     params: { category, subcategory }, // axios automatically converts to ?category=x&subcategory=y
+  });
+
+  return response.data;
+};
+
+export const getCategoryProducts = async (
+  category?: string,
+): Promise<ProductListResponse> => {
+  const response = await axios.get(`${API_BASE_URL}/products`, {
+    params: { category },
   });
 
   return response.data;

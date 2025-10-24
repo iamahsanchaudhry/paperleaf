@@ -7,7 +7,7 @@ function CategoryCard(props: any) {
   return (
     <Card className="group overflow-hidden rounded-2xl p-0 h-full border-0 shadow-md bg-white dark:bg-gray-800 transition-transform hover:-translate-y-2 hover:shadow-xl">
       <CardContent className="p-0">
-        <div className="relative w-full h-56">
+        <div className="relative w-full h-56 shadow-md">
           <img
             src={props.item.image}
             alt={props.item.title}

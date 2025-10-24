@@ -10,7 +10,7 @@ function ProductCard({item}: any) {
     <Card className="group flex flex-col h-full p-0 w-full overflow-hidden rounded-2xl border border-gray-100 dark:border-gray-700 shadow-md bg-white dark:bg-gray-800 transition-transform hover:-translate-y-2 hover:shadow-xl">
       <CardContent className="flex flex-col h-full w-full p-0">
         {/* Image Section */}
-        <div className="relative h-48 sm:h-56 overflow-hidden">
+        <div className="relative h-48 sm:h-56 overflow-hidden shadow-md">
           <img
             src={item.image || dummyPic}
             alt={item.title}
@@ -32,7 +32,7 @@ function ProductCard({item}: any) {
           </div>
 
           <div className="mt-3">
-            <Link to={`/products/${item.id}`}>
+            <Link to={`/products/${item._id}`}>
               <Button
                 variant="link"
                 className="px-0 text-emerald-600 hover:text-emerald-700 dark:text-emerald-400"

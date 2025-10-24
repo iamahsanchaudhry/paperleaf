@@ -5,6 +5,7 @@ import About from "@/pages/About";
 import NotFound from "@/pages/NotFound";
 import { ThemeProvider } from "@/components/theme-provider";
 import ProductDetailPage from "./pages/Products/ProductDetailPage";
+import SubCategoryProductsPage from "./pages/Products/SubCategoryProductsPage";
 import CategoryProductsPage from "./pages/Products/CategoryProductsPage";
 
 export default function App() {
@@ -17,7 +18,8 @@ export default function App() {
               <Route index element={<Home />} />
               <Route path="about" element={<About />} />
               <Route path="products/:id" element={<ProductDetailPage/>}/>
-              <Route path=":category/:subcategory" element={<CategoryProductsPage />} />
+              <Route path=":category/:subcategory" element={<SubCategoryProductsPage />} />
+              <Route path=":category/" element={<CategoryProductsPage />} />
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>

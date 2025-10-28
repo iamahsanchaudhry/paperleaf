@@ -1,3 +1,0 @@
-<div className="relative bg-gradient-to-br from-emerald-600 to-emerald-700 p-2 rounded-lg">
-  <NotebookPen className="w-8 h-8 text-white" />
-</div>

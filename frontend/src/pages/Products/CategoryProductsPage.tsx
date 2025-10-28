@@ -30,7 +30,7 @@ export default function CategoryProductsPage() {
     useEffect(() => {
     fetchProducts();
   }, [category]);
-
+  
   if (loading) return <Loader />;
 
   if (error)
@@ -41,7 +41,7 @@ export default function CategoryProductsPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-6 capitalize">
-        { `${category}`} Products
+        { `${category?category.replace(/-/g, " "):{category}}`} Products
       </h1>
 
       {products.length === 0 ? (

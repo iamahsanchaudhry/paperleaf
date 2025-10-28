@@ -6,7 +6,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { ChevronDown, Search, Menu, X } from "lucide-react";
+import { ChevronDown, Search, Menu, X, NotebookPen } from "lucide-react";
 import clsx from "clsx";
 import { ModeToggle } from "./mode-toggle";
 import { Button } from "./ui/button";
@@ -27,7 +27,10 @@ export default function Navbar(): JSX.Element {
     { name: "Notebooks & Journals", to: "/stationary/notebooks-and-journals" },
     { name: "Pens & Pencils", to: "/stationary/pens-and-pencils" },
     { name: "Erasers & Sharpeners", to: "/stationary/erasers-and-sharpeners" },
-    { name: "Markers & Highlighters", to: "/stationary/markers-and-highlighters" },
+    {
+      name: "Markers & Highlighters",
+      to: "/stationary/markers-and-highlighters",
+    },
     { name: "Art Supplies", to: "/stationary/art-supplies" },
     { name: "Office Supplies", to: "/stationary/office-supplies" },
     { name: "Other Stationary", to: "/stationary/other-stationary" },
@@ -70,19 +73,7 @@ export default function Navbar(): JSX.Element {
           <div className="relative">
             <div className="absolute inset-0 bg-emerald-500 rounded-lg blur-sm opacity-50 group-hover:opacity-75 transition" />
             <div className="relative bg-gradient-to-br from-emerald-600 to-emerald-700 p-2 rounded-lg">
-              <svg
-                className="w-8 h-8 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
-                />
-              </svg>
+              <NotebookPen className="w-8 h-8 text-white" />
             </div>
           </div>
           <div>

@@ -1,5 +1,5 @@
 import Product from "../models/product.model.js";
-import cloudinary from "../utils/cloudinary.js";
+import cloudinary from "../config/cloudinary.js";
 // ALL PRODUCTS, GET PRODUCTS BY CATEGORY, BY SEARCHED, FEATURED PRODUCTS
 export const getProducts = async (req, res) => {
   try {
@@ -168,6 +168,6 @@ export const deleteProduct = async (req, res) => {
   } catch (error) {
     res
       .status(500)
-      .json({ message: "Error deleting product", error: err.message });
+      .json({ message: "Error deleting product", error: error.message });
   }
 };

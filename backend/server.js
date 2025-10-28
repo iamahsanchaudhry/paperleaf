@@ -1,10 +1,10 @@
+import "./config/env.js";
 import express from "express";
 import cors from "cors";
-import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import productRoutes from "./routes/product.routes.js";
+import adminRoutes from "./routes/admin.routes.js";
 
-dotenv.config();
 connectDB();
 
 const app = express();
@@ -19,7 +19,7 @@ app.get("/",(req,res)=>{
 
 app.use("/api/products",productRoutes);
 
-app
+app.use("/api/admin", adminRoutes);
 
 const PORT = process.env.PORT || 5000;
 

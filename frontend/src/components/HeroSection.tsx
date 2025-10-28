@@ -1,10 +1,15 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Plus } from "lucide-react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion } from "framer-motion";// path to your dialog
+import { AddProductDialog } from "./Product/AddProductDialog";
+import { useAuth } from "@/context/AuthContext";
 
 export default function Hero() {
+  const { token } = useAuth();
+
   return (
     <section className="relative w-full overflow-hidden bg-gradient-to-br from-emerald-100 to-emerald-300 dark:from-gray-900 dark:to-gray-950">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 lg:px-8 py-10 md:py-20 gap-8 md:gap-12">
@@ -54,6 +59,19 @@ export default function Hero() {
                 Learn More
               </Button>
             </Link>
+
+            {/* Add Product Button */}
+            {token? <AddProductDialog
+              trigger={
+                <Button
+                  size="lg"
+                  className="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-white flex items-center gap-2"
+                >
+                  <Plus className="w-5 h-5" /> Add Product
+                </Button>
+              }
+            />: null}
+            
           </div>
         </motion.div>
 

@@ -5,68 +5,84 @@ const Categories = [
   {
     id: 0,
     title: "Notebooks & Journals",
-    description: "Premium notebooks and journals designed to capture your ideas, thoughts, and creativity.",
-    image: "https://www.littlegreengifts.com/cdn/shop/files/Mixed_Christmas_Flatlay_17232140-8d83-4aa5-afde-dc0822d12d6a.jpg?v=1758184508&width=1500",
-    link: "/stationary/notebooks",
+    description:
+      "Premium notebooks and journals designed to capture your ideas, thoughts, and creativity.",
+    image:
+      "https://www.littlegreengifts.com/cdn/shop/files/Mixed_Christmas_Flatlay_17232140-8d83-4aa5-afde-dc0822d12d6a.jpg?v=1758184508&width=1500",
+    link: "/stationary/notebooks-and-journals",
   },
   {
     id: 1,
     title: "Pens & Pencils",
-    description: "Smooth-writing pens and pencils for daily use, sketching, and professional work.",
-    image: "https://www.littlegreengifts.com/cdn/shop/files/Mixed_Christmas_Flatlay_17232140-8d83-4aa5-afde-dc0822d12d6a.jpg?v=1758184508&width=1500",
-    link: "/stationary/pens",
+    description:
+      "Smooth-writing pens and pencils for daily use, sketching, and professional work.",
+    image:
+      "https://www.littlegreengifts.com/cdn/shop/files/Mixed_Christmas_Flatlay_17232140-8d83-4aa5-afde-dc0822d12d6a.jpg?v=1758184508&width=1500",
+    link: "/stationary/pens-and-pencils",
   },
   {
     id: 2,
     title: "Markers & Highlighters",
-    description: "Add color and emphasis to your notes with vibrant markers and highlighters.",
-    image: "https://www.littlegreengifts.com/cdn/shop/files/Mixed_Christmas_Flatlay_17232140-8d83-4aa5-afde-dc0822d12d6a.jpg?v=1758184508&width=1500",
-    link: "/stationary/markers",
+    description:
+      "Add color and emphasis to your notes with vibrant markers and highlighters.",
+    image:
+      "https://www.littlegreengifts.com/cdn/shop/files/Mixed_Christmas_Flatlay_17232140-8d83-4aa5-afde-dc0822d12d6a.jpg?v=1758184508&width=1500",
+    link: "/stationary/markers-and-highlighters",
   },
   {
     id: 3,
-    title: "Art Supplies",
-    description: "Paints, brushes, and sketch materials to help artists of all levels create their best work.",
+    title: "Erasers & Sharpeners",
+    description:
+      "Keep your writing crisp and clean with quality erasers and sharpeners for every need.",
     image: "https://www.littlegreengifts.com/cdn/shop/files/Mixed_Christmas_Flatlay_17232140-8d83-4aa5-afde-dc0822d12d6a.jpg?v=1758184508&width=1500",
-    link: "/stationary/art-supplies",
+    link: "/stationary/erasers-and-sharpeners",
   },
   {
     id: 4,
-    title: "Office Supplies",
-    description: "Organize your workspace with stylish and functional office accessories.",
-    image: "https://www.littlegreengifts.com/cdn/shop/files/Mixed_Christmas_Flatlay_17232140-8d83-4aa5-afde-dc0822d12d6a.jpg?v=1758184508&width=1500",
-    link: "/stationary/office-supplies",
+    title: "Art Supplies",
+    description:
+      "Paints, brushes, and sketch materials to help artists of all levels create their best work.",
+    image:
+      "https://www.littlegreengifts.com/cdn/shop/files/Mixed_Christmas_Flatlay_17232140-8d83-4aa5-afde-dc0822d12d6a.jpg?v=1758184508&width=1500",
+    link: "/stationary/art-supplies",
   },
   {
     id: 5,
-    title: "Planners & Diaries",
-    description: "Plan your days effectively with elegant planners and diaries that keep you on track.",
-    image: "https://www.littlegreengifts.com/cdn/shop/files/Mixed_Christmas_Flatlay_17232140-8d83-4aa5-afde-dc0822d12d6a.jpg?v=1758184508&width=1500",
-    link: "/stationary/planners",
+    title: "Office Supplies",
+    description:
+      "Organize your workspace with stylish and functional office accessories.",
+    image:
+      "https://www.littlegreengifts.com/cdn/shop/files/Mixed_Christmas_Flatlay_17232140-8d83-4aa5-afde-dc0822d12d6a.jpg?v=1758184508&width=1500",
+    link: "/stationary/office-supplies",
   },
   {
     id: 6,
-    title: "Other Stationery",
-    description: "Explore a variety of unique stationery items to complement your collection.",
-    image: "https://www.littlegreengifts.com/cdn/shop/files/Mixed_Christmas_Flatlay_17232140-8d83-4aa5-afde-dc0822d12d6a.jpg?v=1758184508&width=1500",
-    link: "/stationary/others",
+    title: "Other Stationary",
+    description:
+      "Explore a variety of unique stationery items to complement your collection.",
+    image:
+      "https://www.littlegreengifts.com/cdn/shop/files/Mixed_Christmas_Flatlay_17232140-8d83-4aa5-afde-dc0822d12d6a.jpg?v=1758184508&width=1500",
+    link: "/stationary/other-stationary",
   },
   {
     id: 7,
     title: "Gift Collections",
-    description: "Thoughtful, beautifully packaged gifts for friends, family, and special occasions.",
-    image: "https://www.littlegreengifts.com/cdn/shop/files/Mixed_Christmas_Flatlay_17232140-8d83-4aa5-afde-dc0822d12d6a.jpg?v=1758184508&width=1500",
+    description:
+      "Thoughtful, beautifully packaged gifts for friends, family, and special occasions.",
+    image:
+      "https://www.littlegreengifts.com/cdn/shop/files/Mixed_Christmas_Flatlay_17232140-8d83-4aa5-afde-dc0822d12d6a.jpg?v=1758184508&width=1500",
     link: "/gift",
   },
   {
     id: 8,
     title: "Home & Decor",
-    description: "Elegant decor items that bring warmth, creativity, and charm to any space.",
-    image: "https://www.littlegreengifts.com/cdn/shop/files/Mixed_Christmas_Flatlay_17232140-8d83-4aa5-afde-dc0822d12d6a.jpg?v=1758184508&width=1500",
+    description:
+      "Elegant decor items that bring warmth, creativity, and charm to any space.",
+    image:
+      "https://www.littlegreengifts.com/cdn/shop/files/Mixed_Christmas_Flatlay_17232140-8d83-4aa5-afde-dc0822d12d6a.jpg?v=1758184508&width=1500",
     link: "/decor",
   },
 ];
-
 
 export default function CategorySection() {
   return (

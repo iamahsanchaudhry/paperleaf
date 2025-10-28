@@ -8,13 +8,13 @@ import {
   CarouselNext,
 } from "./ui/carousel";
 import { useEffect, useState } from "react";
-import type { Product } from "@/types/product.types";
+import type { ProductRes } from "@/types/product.types";
 import { getFeaturedProducts } from "@/api/productApi";
 //import { toast } from "sonner";
 import Loader from "./Loader";
 
 export default function FeaturedItemsSection() {
-  const [featuredItems, setFearuredItems] = useState<Product[]>([]);
+  const [featuredItems, setFearuredItems] = useState<ProductRes[]>([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchFetureItems = async () => {

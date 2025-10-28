@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import type { Product } from "@/types/product.types";
 import ProductCard from "@/components/Cards/ProductCard";
 import Loader from "@/components/Loader";
 import { motion } from "framer-motion";
 import { getSubCategoryProducts } from "@/api/productApi";
+import type { ProductRes } from "@/types/product.types";
 
 export default function SubCategoryProductsPage() {
   const { category, subcategory } = useParams<{
     category: string;
     subcategory?: string;
   }>();
-  const [products, setProducts] = useState<Product[]>([]);
+  const [products, setProducts] = useState<ProductRes[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   

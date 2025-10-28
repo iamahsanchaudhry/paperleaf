@@ -9,7 +9,9 @@ import {
 import { ChevronDown, Search, Menu, X } from "lucide-react";
 import clsx from "clsx";
 import { ModeToggle } from "./mode-toggle";
-
+import { Button } from "./ui/button";
+import { Separator } from "./ui/separator";
+import { useAuth } from "@/context/AuthContext";
 interface Category {
   name: string;
   to: string;
@@ -20,18 +22,21 @@ export default function Navbar(): JSX.Element {
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
   const [search, setSearch] = useState<string>("");
   const navigate = useNavigate();
-
+  const { logout } = useAuth();
   const stationeryCategories: Category[] = [
-    { name: "Notebooks", to: "/stationary/notebooks" },
-    { name: "Pens & Pencils", to: "/stationary/pens" },
-    { name: "Markers & Highlighters", to: "/stationary/markers" },
+    { name: "Notebooks & Journals", to: "/stationary/notebooks-and-journals" },
+    { name: "Pens & Pencils", to: "/stationary/pens-and-pencils" },
+    { name: "Erasers & Sharpeners", to: "/stationary/erasers-and-sharpeners" },
+    { name: "Markers & Highlighters", to: "/stationary/markers-and-highlighters" },
     { name: "Art Supplies", to: "/stationary/art-supplies" },
     { name: "Office Supplies", to: "/stationary/office-supplies" },
-    { name: "Planners & Diaries", to: "/stationary/planners" },
-    { name: "Others", to: "/stationary/others" },
+    { name: "Other Stationary", to: "/stationary/other-stationary" },
   ];
 
   const isStationaryActive = location.pathname.startsWith("/stationary/");
+  const isLoginPage = location.pathname.endsWith("/login");
+  const isLoggedIn = !!localStorage.getItem("token");
+
   const handleSearch = useEffectEvent(() => {
     if (search.trim()) {
       navigate(`/search?q=${encodeURIComponent(search)}`, { replace: true });
@@ -47,11 +52,15 @@ export default function Navbar(): JSX.Element {
     return () => clearTimeout(handler);
   }, [search]);
 
+  const Logout = () => {
+    logout();
+  };
+
   return (
     <nav className="shadow-sm sticky top-0 z-50 bg-white dark:bg-gray-900">
       {/* Top Banner */}
-      <div className="bg-gradient-to-r from-emerald-700 to-emerald-600 text-sm py-2 text-white text-center">
-        <span>Free Shipping on Orders Over Rs. 2000</span>
+      <div className="bg-gradient-to-r from-emerald-500 to-emerald-800 text-sm py-2 text-white text-center">
+        {/* <span>Free Shipping on Orders Over Rs. 2000</span> */}
       </div>
 
       {/* Main Navbar */}
@@ -106,11 +115,26 @@ export default function Navbar(): JSX.Element {
               placeholder="Search products..."
               className="w-48 pl-10 pr-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white"
             />
-            <Search onClick={()=>{}} className="absolute left-3  top-1/2 transform -translate-y-1/2 w-5 h-5" />
+            <Search
+              onClick={() => {}}
+              className="absolute left-3  top-1/2 transform -translate-y-1/2 w-5 h-5"
+            />
           </div>
 
           <ModeToggle />
+          {/* LOGIN & DASHBOARD BUTTONS */}
+          <div className="hidden sm:flex gap-3">
+            {!isLoginPage && !isLoggedIn && (
+              <Button
+                className="text-md"
+                onClick={() => navigate("/admin/login")}
+              >
+                Login
+              </Button>
+            )}
 
+            {isLoggedIn && <Button onClick={() => Logout()}>Logout</Button>}
+          </div>
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileOpen((prev) => !prev)}
@@ -129,7 +153,7 @@ export default function Navbar(): JSX.Element {
       {mobileOpen && (
         <div className="lg:hidden border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 px-6 py-4 animate-fadeIn">
           <div className="flex flex-col gap-2">
-            <div className="relative w-full">
+            <div className="relative bg w-full">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 text-gray-500 dark:text-gray-400" />
               <input
                 type="text"
@@ -141,6 +165,7 @@ export default function Navbar(): JSX.Element {
                dark:bg-gray-800 dark:border-gray-700 dark:text-white"
               />
             </div>
+            <Separator className="my-4" />
             <LinkItem to="/" label="Home" currentPath={location.pathname} />
 
             {/* Stationery Dropdown */}
@@ -177,6 +202,20 @@ export default function Navbar(): JSX.Element {
               label="Contact Us"
               currentPath={location.pathname}
             />
+            <Separator className="my-2" />
+            {/* LOGIN & DASHBOARD BUTTONS */}
+            <div className="my-1">
+              {!isLoginPage && !isLoggedIn && (
+                <Button
+                  className="text-md w-full"
+                  onClick={() => navigate("/admin/login")}
+                >
+                  Login
+                </Button>
+              )}
+
+              {isLoggedIn && <Button onClick={() => Logout()}>Logout</Button>}
+            </div>
           </div>
         </div>
       )}

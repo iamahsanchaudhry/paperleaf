@@ -2,14 +2,14 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { getSearchProducts } from "@/api/productApi";
 import ProductCard from "@/components/Cards/ProductCard";
-import type { Product } from "@/types/product.types";
+import type { ProductRes } from "@/types/product.types";
 import Loader from "@/components/Loader";
 import { motion } from "framer-motion";
 
 export default function SearchPage() {
   const [searchParams] = useSearchParams();
   const query = searchParams.get("q") || "";
-  const [products, setProducts] = useState<Product[]>([]);
+  const [products, setProducts] = useState<ProductRes[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
